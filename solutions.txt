@@ -1,0 +1,51 @@
+ public IEnumerable<IEnumerable<string>> GroupAnagrams(IEnumerable<string> strs) {
+         if(strs == null || !strs.Any()){
+		        return new List<IList<String>>();
+	        }
+
+	        var map = new Dictionary<String, List<String>>();
+	        
+	        foreach (String s in strs) {
+		        char[] ca = s.ToCharArray();
+		        Array.Sort(ca);
+
+		        String keyStr = new string(ca);
+		        if(!map.ContainsKey(keyStr))
+                {
+			        map.Add(keyStr, new List<String>());
+                }
+
+		        map[keyStr].Add(s);
+	        }	       
+
+	        return new List<IList<String>>(map.Values);
+    }
+
+
+
+          public static void showMe(IEnumerable<IEnumerable<string>> anagrams) {
+            foreach( var l in anagrams) {
+                Console.Write('[');
+                foreach( var s in l) {
+                    Console.Write(s);
+                    Console.Write(", ");
+                }
+                Console.WriteLine(']');
+            }
+        }
+
+// What data structure would you use instead of int to prevent buffer overflow?
+        static BigInteger Fib(int N) 
+        {
+            if (N-- == 0) return 0;
+            if (N-- == 0) return 1;
+            BigInteger f1 = 0;
+            BigInteger f2 = 1;
+            BigInteger res = 0;
+            while (N-->= 0) {
+                res = f1 + f2;
+                f1 = f2;
+                f2 = res;
+            }
+	    return res;
+	}

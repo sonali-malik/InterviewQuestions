@@ -1,0 +1,66 @@
+public static IEnumerable<IEnumerable<int>> FindPermutations(int[] nums) 
+        {
+            var result = new List<IList<int>>();
+            // algo goes here
+            var n = nums.Length;
+
+            if (n == 0) return result;
+
+            DFS(nums, new bool[n], new List<int>(), result);
+
+            return result;
+        }
+        
+
+public static void DFS(int[] nums, bool[] isVisited, IList<int> oneResult, IList<IList<int>> result) {
+        var n = nums.Length;
+
+        if (oneResult.Count == n) {
+            result.Add(new List<int>(oneResult));
+        } else {
+            for (int i = 0; i < n; i++) {
+                if (isVisited[i]) continue;
+
+                oneResult.Add(nums[i]);
+                isVisited[i] = true;
+                DFS(nums, isVisited, oneResult, result);
+                isVisited[i] = false;
+                oneResult.RemoveAt(oneResult.Count - 1);
+            }
+        }
+    }   
+
+         public static void showMe(IEnumerable<IEnumerable<int>> permutations) {
+            foreach( var l in permutations) {
+                Console.Write('[');
+                foreach( var s in l) {
+                    Console.Write(s);
+                    Console.Write(", ");
+                }
+                Console.WriteLine(']');
+            }
+        }
+
+
+// What data structure would you use instead of int to prevent buffer overflow?
+        static BigInteger Fib(int N) 
+        {
+            if (N-- == 0) return 0;
+            if (N-- == 0) return 1;
+            BigInteger f1 = 0;
+            BigInteger f2 = 1;
+            BigInteger res = 0;
+            while (N-->= 0) {
+                res = f1 + f2;
+                f1 = f2;
+                f2 = res;
+            }
+	    return res;
+	}
+
+//O(n)
+        static double Fib(int n)
+        {
+            double sqrt5 = Math.Sqrt(5);
+            return (1/sqrt5*(Math.Pow((1+sqrt5)/2, n)-Math.Pow((1-sqrt5)/2,n)));
+        }
