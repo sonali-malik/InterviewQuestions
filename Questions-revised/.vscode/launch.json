@@ -1,0 +1,41 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Permutations Question",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "buildPermutations",
+            "program": "${workspaceFolder}/src/Permutations/bin/Debug/netcoreapp3.1/Permutations.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/Permutations",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+        {
+            "name": "SquareRoot Question",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "buildSquareRoot",
+            "program": "${workspaceFolder}/src/SquareRoot/bin/Debug/netcoreapp3.1/SquareRoot.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/SquareRoot",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+        {
+            "name": "Fibonacci Question",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "buildFibonacci",
+            "program": "${workspaceFolder}/src/Fibonacci/bin/Debug/netcoreapp3.1/Fibonacci.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/Fibonacci",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        }
+    ]
+}
